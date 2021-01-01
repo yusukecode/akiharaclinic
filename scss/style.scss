@@ -1,0 +1,943 @@
+@import "config.scss";
+
+// 基本スタイル
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: #707070;
+  font-size: 110%;
+  letter-spacing: 0.06em;
+  font-family: $gothicFont;
+
+  @include mq480 {
+    font-size: 100%;
+  }
+}
+
+// 右下固定の一番上に戻るボタン
+#gohome {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  transition: ease 0.5s;
+  opacity: 0;
+
+  @include mq768 {
+    width: 60px;
+    height: 60px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+#wrapper {
+  overflow-x: hidden;
+}
+
+h2 {
+  border-bottom: 1px solid #707070;
+  font-size: 150%;
+  font-weight: 400;
+
+  img {
+    width: 30px;
+    height: auto;
+    margin: 5px 6px 0;
+  }
+
+  @include mq768 {
+    margin-right: 30px;
+    border-bottom: none;
+    text-align: center;
+  }
+}
+
+strong {
+  font-size: 125%;
+
+  @include mq480 {
+    font-size: 115%;
+  }
+}
+
+// ヘッダー周り
+
+address {
+  display: block;
+  font-weight: 700;
+  font-style: normal;
+  text-align: right;
+
+  .addbr {
+    display: none;
+
+    @include mq992 {
+      display: inline;
+    }
+  }
+
+  @include mq992 {
+    text-align: left;
+    font-size: 90%;
+  }
+
+  @include mq768 {
+    display: none;
+  }
+}
+
+#spMenu {
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border: solid 1px #707070;
+
+  @include mq768 {
+    display: block;
+  }
+
+  @include mq320 {
+    width: 33px;
+    height: 33px;
+    padding: 3px;
+  }
+
+  span {
+    display: block;
+    background-color: #707070;
+    width: 80%;
+    height: 3px;
+    margin: 4px auto;
+
+    @include mq320 {
+      height: 2px;
+      margin: 3px auto;
+    }
+  }
+
+  p {
+    margin: 0 auto;
+    font-size: 12px;
+
+    @include mq320 {
+      font-size: 10px;
+    }
+  }
+}
+
+#font-adjust {
+  width: 100%;
+  height: 40px;
+  background-color: #aadeac;
+}
+
+#fontArea {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 1250px;
+  max-width: 95%;
+  height: 100%;
+  margin: auto;
+
+  .adjusttitle {
+    display: flex;
+    align-items: center;
+    height: 25px;
+    background-color: #eeeeee;
+    margin-left: 10px;
+    padding: 0 6px;
+    border: 1px solid #707070;
+    border-radius: 2px;
+    font-size: 12px;
+    color: #000;
+    box-sizing: border-box;
+  }
+
+  button {
+    height: 25px;
+    background-color: #eeeeee;
+    margin-left: 10px;
+    border: 1px solid #707070;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #000;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1250px;
+  max-width: 95%;
+  margin: 40px auto 0;
+
+  @include mq768 {
+    margin: 10px auto;
+  }
+
+  h1 {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+  }
+
+  .titlelogo {
+    width: 500px;
+    max-width: 80%;
+    height: auto;
+
+    @include mq768 {
+      width: 450px;
+    }
+  }
+}
+
+// ナビゲーション
+
+nav {
+  display: block;
+  width: 1250px;
+  max-width: 95%;
+  margin: 30px auto 60px;
+
+  @include mq768 {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    li {
+      position: relative;
+      width: 24%;
+      height: 75px;
+      border: 1px solid #707070;
+      margin-bottom: 15px;
+      list-style: none;
+
+      @include mq992 {
+        height: 65px;
+      }
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      a {
+        text-indent: 1.2em;
+        line-height: 2.6;
+        display: block;
+        height: 100%;
+        color: #707070;
+        text-decoration: none;
+        font-size: 115%;
+
+        @include mq992 {
+          text-indent: 0.5em;
+          line-height: 2.2;
+        }
+      }
+
+      img {
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+        height: 40px;
+        width: auto;
+        z-index: -1;
+
+        @include mq992 {
+          height: 32px;
+        }
+      }
+    }
+  }
+}
+
+//　メインビジュアル
+
+#mainvisualback {
+  width: 100%;
+  height: auto;
+  background-color: #efefef;
+}
+
+#mainvisual {
+  width: 1250px;
+  max-width: 100%;
+  margin: auto;
+
+  img.visual {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+}
+
+// メインコンテンツ
+
+main {
+  width: 1250px;
+  max-width: 100%;
+  margin: auto;
+}
+
+// お知らせ
+
+#info {
+  max-width: 90%;
+  margin: 80px auto;
+
+  @include mq768 {
+    margin: 40px auto;
+  }
+}
+
+#infoArea {
+  background: linear-gradient(#707070, #707070) no-repeat 85px 0 / 1px 100%;
+  width: 1050px;
+  max-width: 90%;
+  margin: 25px auto;
+
+  @include mq768 {
+    background-position: 77px 0;
+  }
+
+  @include mq480 {
+    background-position: 60px;
+  }
+}
+
+.infoSubArea {
+  display: flex;
+  justify-content: flex-start;
+
+  @include mq768 {
+    font-size: 90%;
+  }
+
+  .infoTimes {
+    width: 60px;
+    margin-right: 20px;
+    padding-right: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @include mq480 {
+      width: 35px;
+      margin-right: 10px;
+    }
+  }
+
+  .infoText {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+// 当院の紹介
+
+#ours {
+  max-width: 90%;
+  margin: auto;
+}
+
+#oursContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 1050px;
+  max-width: 90%;
+  margin: 55px auto;
+
+  @include mq768 {
+    display: block;
+  }
+
+  img {
+    display: block;
+    width: 450px;
+    max-width: 45%;
+    height: auto;
+    margin-bottom: 80px;
+
+    @include mq768 {
+      max-width: 75%;
+      margin: 20px auto;
+    }
+  }
+
+  .pc {
+    @include mq768 {
+      display: none;
+    }
+  }
+
+  .sp {
+    display: none;
+
+    @include mq768 {
+      display: block;
+    }
+  }
+
+  .messageText {
+    width: 488px;
+    max-width: 45%;
+    height: auto;
+    margin: 0 0 80px;
+    font-weight: 400;
+
+    @include mq768 {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 50px 0 80px;
+      padding: 20px;
+      border: 1px solid #707070;
+      box-sizing: border-box;
+    }
+
+    p {
+      margin-top: 0;
+    }
+  }
+}
+
+// 診療案内
+
+#medicine {
+  width: 90%;
+  margin: auto;
+}
+
+#medicineContent {
+  width: 1050px;
+  max-width: 90%;
+  margin: 55px auto;
+
+  @include mq768 {
+    width: 90%;
+  }
+
+  strong {
+    display: block;
+    margin-top: 35px;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+
+  img.hours {
+    width: 100%;
+    height: auto;
+    margin: 50px auto 5px;
+  }
+}
+
+#medicineImage {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 10px auto 30px;
+
+  img {
+    width: 48%;
+    height: auto;
+  }
+}
+
+// 医師の紹介
+
+#doctorProfile {
+  max-width: 90%;
+  margin: auto;
+}
+
+#doctorContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 1050px;
+  max-width: 90%;
+  margin: 55px auto 25px;
+
+  @include mq768 {
+    width: 90%;
+    margin: 25px auto;
+  }
+
+  .doctorImage {
+    width: 500px;
+    max-width: 48%;
+    height: auto;
+    margin-bottom: 120px;
+
+    @include mq768 {
+      display: block;
+      width: 75%;
+      max-width: 75%;
+      margin: 20px auto;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .doctorText {
+    width: 500px;
+    max-width: 48%;
+    height: auto;
+    margin-bottom: 120px;
+
+    @include mq768 {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 60px;
+
+      p {
+        &:first-child {
+          text-align: center;
+        }
+
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .study {
+    width: 500px;
+    max-width: 48%;
+    height: auto;
+    margin-bottom: 120px;
+    text-align: center;
+
+    @include mq768 {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 60px;
+    }
+
+    .studyArea {
+      display: inline-block;
+      text-align: left;
+
+      p:nth-child(odd) {
+        margin: 25px auto 10px;
+        text-align: center;
+      }
+
+      p:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .staffText {
+    width: 500px;
+    max-width: 48%;
+    height: auto;
+    margin-bottom: 120px;
+
+    @include mq768 {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 60px;
+
+      p {
+        &:first-child {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  p {
+    margin: 0 0 10px;
+  }
+
+  .pc {
+    display: block;
+
+    @include mq768 {
+      display: none;
+    }
+  }
+
+  .sp {
+    display: none;
+
+    @include mq768 {
+      display: block;
+    }
+  }
+}
+
+// Q&A
+
+#qanda {
+  width: 90%;
+  margin: auto;
+}
+
+.qandaBody {
+  width: 1050px;
+  max-width: 90%;
+  height: auto;
+  border: 1px solid #707070;
+  margin: 55px auto;
+
+  @include mq768 {
+    width: 90%;
+  }
+}
+
+.qandaContent {
+  padding: 40px 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include mq480 {
+    padding: 40px 30px;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+  }
+
+  p {
+    width: calc(100% - 60px);
+    margin: 0 0 25px;
+  }
+}
+
+// アクセス
+
+#access {
+  width: 90%;
+  margin: auto;
+}
+
+.accessContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 1050px;
+  max-width: 90%;
+  height: auto;
+  margin: 55px auto;
+
+  @include mq768 {
+    display: block;
+    width: 90%;
+  }
+
+  .accessText {
+    width: calc(100% - 560px);
+    height: auto;
+
+    @include mq992 {
+      width: calc(100% - 422px);
+    }
+
+    @include mq768 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  img.map {
+    width: 538px;
+    height: auto;
+    margin-left: 22px;
+
+    @include mq992 {
+      width: 400px;
+    }
+
+    @include mq768 {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin: auto;
+    }
+  }
+}
+
+// お問い合わせ
+
+#contact {
+  width: 90%;
+  margin: auto;
+}
+
+.contactBody {
+  width: 1050px;
+  max-width: 90%;
+  height: auto;
+  border: 1px solid #707070;
+  margin: 55px auto;
+
+  @include mq768 {
+    width: 90%;
+  }
+}
+
+form {
+  padding: 80px;
+
+  @include mq480 {
+    padding: 30px;
+  }
+}
+
+.inputArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+
+  @include mq640 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  label {
+    width: 100px;
+    margin-right: 40px;
+
+    @include mq640 {
+      display: block;
+      margin-right: 0;
+    }
+  }
+
+  input,
+  textarea {
+    display: block;
+    width: calc(100% - 140px);
+    height: 40px;
+    font-size: 100%;
+    box-sizing: border-box;
+
+    @include mq640 {
+      width: 100%;
+    }
+  }
+
+  textarea {
+    height: 300px;
+  }
+}
+
+.submitArea {
+  width: calc(100% - 140px);
+  margin-left: 140px;
+  text-align: center;
+
+  @include mq640 {
+    width: 100%;
+    margin: auto;
+  }
+
+  input[type="submit"] {
+    -webkit-appearance: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 40px;
+    background-color: #f3a13c;
+    border: none;
+    border-radius: 20px;
+    margin: auto;
+    text-align: center;
+    font-size: 100%;
+    color: white;
+  }
+}
+
+// フッター
+
+footer {
+  width: 100%;
+  height: auto;
+}
+
+#footerMain {
+  background-color: #707070;
+  width: 100%;
+  height: auto;
+  padding: 30px 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+#footerContent {
+  display: inline-block;
+  text-align: left;
+}
+
+small {
+  display: block;
+  margin: auto;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.pc {
+  display: block;
+
+  @include mq768 {
+    display: none;
+  }
+}
+
+.sp {
+  display: none;
+
+  @include mq768 {
+    display: block;
+  }
+}
+
+// ハンバーガーメニューのスタイル
+
+#outinMenu {
+  display: none;
+  @include mq768 {
+    position: fixed;
+    background-color: #f3a13c;
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    .dli-close {
+      display: inline-block;
+      vertical-align: middle;
+      color: white;
+      line-height: 1;
+      width: 45px;
+      height: 0.2em;
+
+      margin: 0 15px 15px;
+      background: currentColor;
+      border-radius: 0.1em;
+      position: relative;
+      transform: rotate(45deg);
+    }
+
+    .dli-close::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: inherit;
+      transform: rotate(90deg);
+    }
+
+    nav {
+      display: block;
+      width: 80%;
+      max-width: 90%;
+      margin: 20px auto 60px;
+
+      @include mq768 {
+        display: block;
+      }
+
+      ul {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        li {
+          position: relative;
+          width: 48%;
+          height: 45px;
+          border: none;
+          margin-bottom: 15px;
+          list-style: none;
+
+          @include mq480 {
+            width: 90%;
+            height: 30px;
+            margin-bottom: 10px;
+          }
+
+          a {
+            text-indent: 1.2em;
+            line-height: 2.6;
+            display: block;
+            height: 100%;
+            background-color: white;
+            color: #707070;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 100%;
+
+            @include mq640 {
+              font-size: 90%;
+            }
+
+            @include mq480 {
+              display: flex;
+              align-items: center;
+              font-size: 90%;
+            }
+          }
+
+          img {
+            position: absolute;
+            right: 10px;
+            bottom: 5px;
+            height: 30px;
+            width: auto;
+            z-index: 1;
+
+            @include mq480 {
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
